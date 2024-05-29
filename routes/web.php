@@ -1,7 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get("/",function(){
+    $data = DB::table('posts')->get();
+    //dd($data)->json();
 
-Route::get('/', function () {
+    dd('hahhhhhhaaaazzz');
     return view('welcome');
-});
+})->name('welcome_page');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
